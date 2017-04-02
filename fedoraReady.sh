@@ -73,7 +73,7 @@ wget https://www.gitkraken.com/android-chrome-192x192.png
 mv android-chrome-192x192.png /opt/GitKraken/gitkraken.png
 
 #Gnome Tweak Tool
-sudo dnf install gnome-tweak-tool
+sudo dnf install -y gnome-tweak-tool
 
 #Google Chrome
 sudo yum install -y google-chrome-stable_current_x86_64.rpm
@@ -84,18 +84,16 @@ sudo dnf install -y amarok
 #LAMP
 ##Apache
 sudo dnf install httpd -y
-systemctl enable httpd
-systemctl start httpd
+sudo systemctl enable httpd
+sudo systemctl start httpd
 
 ##MariaDB
 sudo dnf install mariadb mariadb-server -y
-systemctl enable mariadb
-systemctl start mariadb
+sudo systemctl enable mariadb
+sudo systemctl start mariadb
 
 ##PHP
-sudo dnf install php -y
-sudo dnf install php-mysql -y
-sudo dnf install phpmyadmin -y
+sudo dnf install -y php php-common php-pdo php-gd php-mbstring
 
 #MP3 Plugins
 sudo dnf install -y gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-bad-free gstreamer1-plugins-bad-freeworld gstreamer1-plugins-bad-free-extras ffmpeg
